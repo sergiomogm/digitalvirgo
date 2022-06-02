@@ -1,0 +1,45 @@
+<div class="inicio">
+    <div class="inicio__centrado">
+        <input 
+            type="date" 
+            name="nombre"
+            [(ngModel)] ="dt" 
+            (ngModelChange)="onChange()"
+            >
+        <button (click)="enviarFecha()">Enviar</button>
+
+
+        <table
+        *ngIf=" datos.length >= 1 "
+        class="inicio__tabla">
+        <div (click) = "disminuir()" class="inicio__flecha izquierda">
+            <svg xmlns="http://www.w3.org/2000/svg" class="inicio__svg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+              </svg>
+        </div>
+        <div (click) = "aumentar()" class="inicio__flecha derecha">
+            <svg xmlns="http://www.w3.org/2000/svg" class="inicio__svg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+              </svg>
+        </div>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Img</th>
+                    <th>Login</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let usuario of arraycortado">
+                    <td><span>{{usuario.id}}</span></td>
+                    <td> <img [src]="usuario.avatar_url" alt="usuario.login" class="inicio__imagen"></td>
+                    <td><span>{{usuario.login}}</span></td>
+                    <td><a [routerLink]="[ '/user' , usuario.login ]">Ver perfil</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

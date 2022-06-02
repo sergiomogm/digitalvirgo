@@ -1,0 +1,87 @@
+.usuario{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #e4f2f7;
+    &__flecha{
+        cursor: pointer;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        transition: all .5s ease;
+        z-index: 3;
+        &:hover .slider__svg{
+            transform: scale(1.4);
+        }
+        &.izquierda{
+            left: 0;
+        }
+        &.derecha{
+            right: 0;
+
+        }
+    }
+    &__svg{
+        width: 2em;
+        height: 2.8em;
+        transition: all .5s ease;
+    }
+    &__centrado{
+        width: 80%;
+        padding-top: 3em;
+        max-width: 400px;
+        margin: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    &__imagen{
+        width: 100%;
+    }
+    &__info{
+        width: 100%;
+    }
+    &__nombre{
+        padding: 1em 0;
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+    &__bio{
+        text-align: center;
+        font-size: .8rem;
+    }
+    &__loc{
+        text-align: center;
+        display: block;
+        padding: .5em 0;
+        color: darkslategray;
+    }
+    &__comunidad{
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: center;  
+    }
+    &__github{
+        width: 160px;
+        margin: 1.2em auto;
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 15px;
+        color: #212121;
+        z-index: 1;
+        background: #92bdca;
+        position: relative;
+        font-weight: 1000;
+        font-size: 1em;
+        box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+        overflow: hidden;
+    }
+}

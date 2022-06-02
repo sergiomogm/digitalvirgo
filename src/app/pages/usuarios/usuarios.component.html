@@ -1,0 +1,31 @@
+<div class="usuario">
+    <a  
+    *ngIf=" listausuarios.length >= 1 && posicion > 1 "
+    [routerLink]="[ '/user' , disminuir() ]"
+    class="usuario__flecha izquierda">
+        <svg xmlns="http://www.w3.org/2000/svg" class="usuario__svg" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+          </svg>
+    </a>
+    <a 
+    *ngIf=" listausuarios.length >= 1"
+    [routerLink]="[ '/user' , aumentar() ]"
+    class="usuario__flecha derecha">
+        <svg xmlns="http://www.w3.org/2000/svg" class="usuario__svg" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+    </a>
+    <div class="usuario__centrado">
+        <img [src]="usuario.avatar_url" alt="usuario.login" class="usuario__imagen">
+        <div class="usuario__info">
+            <h2 class="usuario__nombre">{{usuario.name}}</h2>
+            <p class="usuario__bio">{{usuario.bio}}</p>
+            <span class="usuario__loc">{{usuario.location}}</span>
+            <div class="usuario__comunidad">
+                <span class="usuario__seguidores">Seguidores: {{usuario.followers}} </span>
+                <span class="usuario__seguidos">Seguidos: {{usuario.following}}</span>
+            </div>
+                <a [href]="usuario.html_url" class="usuario__github">Visitar el github</a>
+        </div>
+    </div>
+</div>
